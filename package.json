@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "selftest": "node index.js --selftest",
+    "pullbin": "node bin/pullbin.js",
+    "test": "node index.js --selftest"
   },
   "bin": {
     "pullbin": "./bin/pullbin.js"
@@ -14,7 +17,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@langchain/textsplitters": "^1.0.2",
     "gray-matter": "^4.0.3",
+    "open-windows-file-dialog": "^1.0.0",
     "simple-git": "^4.0.2"
   }
 }

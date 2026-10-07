@@ -45,3 +45,11 @@ logs/
 *.log
 tmp/
 temp/
+
+# Local binaries provisioned by bin/pullbin.js (besar, spesifik mesin)
+bin/llama/build/
+bin/llama/embedding/*.gguf
+bin/llama/qdrant/qdrant
+bin/llama/qdrant/qdrant.exe
+bin/llama/qdrant/storage/
+bin/llama/.tmp/
