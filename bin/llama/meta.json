@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-07T17:10:24.185Z",
+  "at": "2026-10-10T15:04:35.099Z",
   "platform": {
     "platform": "win32",
     "arch": "x64",
@@ -16,14 +16,14 @@
     "skipMarkitdown": false
   },
   "embedding": {
-    "file": "nomic-embed-text-v1.5.Q8_0.gguf",
+    "file": "nomic-embed-text-v1.5.Q4_K_M.gguf",
     "dim": 768,
-    "path": "C:\\Users\\Afdal\\Documents\\Laboratorium\\pps\\bin\\llama\\embedding\\nomic-embed-text-v1.5.Q8_0.gguf"
+    "path": "C:\\Users\\Ika Repina\\Documents\\Project\\ai_generate\\bin\\llama\\embedding\\nomic-embed-text-v1.5.Q4_K_M.gguf"
   },
   "qdrant": {
     "version": "v1.19.2",
     "asset": "qdrant-x86_64-pc-windows-msvc.zip",
-    "path": "C:\\Users\\Afdal\\Documents\\Laboratorium\\pps\\bin\\llama\\qdrant\\qdrant.exe"
+    "path": "C:\\Users\\Ika Repina\\Documents\\Project\\ai_generate\\bin\\llama\\qdrant\\qdrant.exe"
   },
   "llama": {
     "backend": "cpu",
@@ -31,21 +31,20 @@
     "files": [
       "llama-b11429-bin-win-cpu-x64.zip"
     ],
-    "serverBin": "C:\\Users\\Afdal\\Documents\\Laboratorium\\pps\\bin\\llama\\build\\llama-server.exe"
+    "serverBin": "C:\\Users\\Ika Repina\\Documents\\Project\\ai_generate\\bin\\llama\\build\\llama-server.exe"
   },
   "markitdown": "ok",
   "accelerator": {
-    "hasNvidia": true,
-    "gpuName": "NVIDIA GeForce 920MX",
-    "vramMB": 2048,
-    "cudaVersion": "13.0",
-    "computeCap": "5.0",
+    "hasNvidia": false,
+    "gpuName": null,
+    "vramMB": 0,
+    "cudaVersion": null,
+    "computeCap": null,
     "hasVulkan": true,
     "vulkanGPUs": [
-      "Intel(R) HD Graphics 620",
-      "NVIDIA GeForce 920MX"
+      "AMD Radeon(TM) Graphics"
     ],
     "recommendation": "cpu",
-    "reason": "NVIDIA GeForce 920MX hanya 2048 MiB VRAM (CC 5.0, arsitektur lawas) — build CUDA tidak disarankan (rentan OOM / toolkit tidak lagi mendukung Maxwell di CUDA 13). Dipilih build CPU-AVX2 yang paling stabil; Vulkan tetap tersedia sebagai opsi manual (--backend=vulkan)."
+    "reason": "Tidak ada GPU NVIDIA; Vulkan tersedia tapi CPU dipilih sebagai default stabil untuk embedding."
   }
 }
