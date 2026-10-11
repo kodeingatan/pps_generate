@@ -20,13 +20,20 @@
     "@langchain/textsplitters": "^1.0.2",
     "@mohtasham/md-to-docx": "^4.0.1",
     "@napi-rs/canvas": "^1.0.11",
+    "better-sqlite3": "^13.0.3",
     "docx": "^9.10.0",
+    "docxtemplater": "^3.71.0",
     "dotenv": "^18.0.7",
     "gray-matter": "^4.0.3",
     "mammoth": "^1.13.0",
-    "open-windows-file-dialog": "^1.0.0",
     "openai": "^7.32.0",
     "pdfjs-dist": "^6.4.299",
-    "simple-git": "^4.0.2"
+    "pizzip": "^3.3.0",
+    "simple-git": "^4.0.2",
+    "uuid": "^14.0.3"
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true,
+    "sharp@0.34.5": true
   }
 }

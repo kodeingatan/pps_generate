@@ -1,17 +1,24 @@
 
 import 'dotenv/config';
 import OpenAI from "openai";
+import { getRecentMessages, saveMessage } from './memory.js';
 
-export async function askAI(question, configs = {}) {
+const client = new OpenAI({
+    baseURL:
+        process.env.OMNIROUTE_BASE_URL ||
+        "http://localhost:20128/v1",
 
-    const client = new OpenAI({
-        baseURL:
-            process.env.OMNIROUTE_BASE_URL ||
-            "http://localhost:20128/v1",
+    apiKey:
+        process.env.OMNIROUTE_API_KEY || "local"
+});
 
-        apiKey:
-            process.env.OMNIROUTE_API_KEY || "local"
-    });
+export async function askAI(sessionId, question, configs = {}) {
+
+    //  Ambil riwayat percakapan sesi ini
+    const history = getRecentMessages(
+        sessionId,
+        10
+    );
 
     if (configs.model === undefined) configs.model = process.env.OMNIROUTE_MODEL || "auto"
     if (configs.systemContent === undefined) configs.systemContent = `
@@ -40,7 +47,7 @@ Utamakan akurasi, objektivitas, dan kepastian hukum.
     if (configs.context === undefined) configs.context = ""
 
 
-    const answer =
+    const response =
         await client.chat.completions.create({
             // stream: true,
             model: configs.model,
@@ -49,7 +56,7 @@ Utamakan akurasi, objektivitas, dan kepastian hukum.
                     role: "system",
                     content: configs.systemContent,
                 },
-
+                ...history,
                 {
                     role: "user",
 
@@ -64,7 +71,8 @@ ${question}
 `
                 }
 
-            ]
+            ],
+            temperature: 0.2,
         });
 
 
@@ -74,5 +82,11 @@ ${question}
     //     process.stdout.write(token);
     // }
 
-    return answer.choices[0].message.content
+    const answer = response.choices[0].message.content
+
+    //  Simpan pertanyaan dan jawaban
+    saveMessage(sessionId, "user", question);
+    saveMessage(sessionId, "assistant", answer);
+
+    return answer;
 }
