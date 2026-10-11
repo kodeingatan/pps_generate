@@ -1,8 +1,8 @@
 import fs from "fs"
 import { convertMarkdownToDocx } from "@mohtasham/md-to-docx"
-import { handleFileOpen } from "./helpers/filemanager.js"
-import { convertToMarkdown } from "./helpers/obsidian.js"
-import { askAI } from "./helpers/omniroute.js"
+import { handleFileOpen } from "../helpers/filemanager.js"
+import { convertToMarkdown } from "../helpers/obsidian.js"
+import { askAI } from "../helpers/omniroute.js"
 
 (async () => {
 

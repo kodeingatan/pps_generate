@@ -21,11 +21,11 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { handleFileOpen } from "./helpers/filemanager.js";
-import { convertToMarkdownSave, convertToMarkdown } from "./helpers/obsidian.js";
-import { splitTextIntoChunks } from "./helpers/chungking.js";
-import { embedChunks, embedQuery, embeddingStatus } from "./helpers/embedding.js";
-import { upsertChunks, searchSimilar, getCollectionInfo } from "./helpers/vektordb.js";
+import { handleFileOpen } from "../helpers/filemanager.js";
+import { convertToMarkdownSave, convertToMarkdown } from "../helpers/obsidian.js";
+import { splitTextIntoChunks } from "../helpers/chungking.js";
+import { embedChunks, embedQuery, embeddingStatus } from "../helpers/embedding.js";
+import { upsertChunks, searchSimilar, getCollectionInfo } from "../helpers/vektordb.js";
 
 const argv = process.argv.slice(2);
 const getArg = (name, def = null) => {

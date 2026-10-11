@@ -10,9 +10,9 @@
  * Syarat: sudah pernah `node bin/pullbin.js` (biner llama + model + qdrant).
  */
 
-import { splitTextIntoChunks } from "./helpers/chungking.js";
-import { embedChunks, embedQuery } from "./helpers/embedding.js";
-import { upsertChunks, searchSimilar } from "./helpers/vektordb.js";
+import { splitTextIntoChunks } from "../helpers/chungking.js";
+import { embedChunks, embedQuery } from "../helpers/embedding.js";
+import { upsertChunks, searchSimilar } from "../helpers/vektordb.js";
 
 // ---------------------------------------------------------------------------
 // 1. Pengaturan — dibuat tetap biar mudah dibaca (di sample.js ini dari CLI)
