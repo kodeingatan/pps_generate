@@ -16,8 +16,14 @@ const sessionId = uuidv4();
     // {KESIMPULAN}
     // {SARAN}
 
-    replaceDocxFile(laporanKunjunganPath, {
-        "PELAKSANAAN KEGIATAN": `#Test ${sessionId}`,
+    await replaceDocxFile(laporanKunjunganPath, {
+        "PELAKSANAAN KEGIATAN": `### Pelaksanaan Kegiatan
+
+1. Melakukan kunjungan lapangan.
+2. **Progres pekerjaan** mencapai 75%.
+
+ - Kendala: cuaca hujan.
+ - Tindak lanjut: penyesuaian jadwal.`,
         "KENDALA DAN HAMBATAN PELAKSANAAN": "test",
         "KESIMPULAN": "test",
         "SARAN": "test"
